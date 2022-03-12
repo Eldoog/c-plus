@@ -1,8 +1,25 @@
 印出
 std::cout << "要印的內容" << std::endl
+
+解析: output 運算子會將右邊(代印值)寫至左邊(ostream 物件),最終輸出返回值也就是 output stream 本身
+
+*std::cout <<"enter two numbers:"<<std::endl 可看成 (std::cout <<"enter two numbers:")<<std::endl
+等同 std::out << "enter two num :";
+     std::out << std::endl;
+其中 endl 為特殊值，稱為 manipulator。其效果為輸出換行並且將輸出 buffer 清空(防止殘留導致錯誤推斷)
+
+
 -------------------------------------
 輸入
-std::cin  >> 變數
+std::cin  >> 變數1 >> 變數2
+
+解析
+等同 std::cin  >> 變數1      //將值儲存到變數1
+     std::cin  >> 變數2      //將值儲存到變數2		
+
 -------------------------------------
 印出變數 i,j,i+j
 std::cout << "要印的內容" <<i<< "and" <<<j<< "equal" <<<i+j<< std::endl
+解析
+-------------------------------------
+*srd::<名稱> -> 其中 std 表示程式庫的名稱，避免用到不同的程式庫但相同名稱的程式，所以透過 namespace std:: 來指定他為 
